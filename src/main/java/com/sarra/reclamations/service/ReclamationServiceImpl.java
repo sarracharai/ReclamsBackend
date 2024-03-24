@@ -52,24 +52,39 @@ public class ReclamationServiceImpl implements ReclamationService {
 		return reclamationRepository.findByAgent(agent);
 	}
 
-	@Override
-	public List<Reclamation> findByAnnee(String annee) {
-		return reclamationRepository.findByAnnee(annee);
-	}
+	//@Override
+	//public List<Reclamation> findByAnnee(String annee) {
+		//return reclamationRepository.findByAnnee(annee);
+	//}
 
 	@Override
 	public List<Reclamation> findByAgentMatriculeAgent(String matriculeAgent) {
 		return reclamationRepository.findByAgentMatriculeAgent(matriculeAgent);
 	}
 
-	@Override
-	public List<Reclamation> findByOrderByAnneeAsc() {
-		return reclamationRepository.findByOrderByAnneeAsc();
-	}
+	//@Override
+	//public List<Reclamation> findByOrderByAnneeAsc() {
+		//return reclamationRepository.findByOrderByAnneeAsc();
+	//}
 
 	@Override
 	public List<Reclamation> findByobjetRecalamation(String objetRecalamation) {
 	    return reclamationRepository.findByobjetRecalamation(objetRecalamation);
 	}
 
+	
+	@Override
+	public Reclamation getLatestReclamation() {
+	    List<Reclamation> reclamations = reclamationRepository.findAll();
+	    if (!reclamations.isEmpty()) {
+	        return reclamations.get(reclamations.size() - 1);
+	    } else {
+	        return null; // Ou lancez une exception appropriée si aucune réclamation n'est disponible.
+	    }
+	}
+
+	public List<Reclamation> getReclamationsArchivees() {
+	    return reclamationRepository.findByArchivedTrue();
+	  }
+	
 }

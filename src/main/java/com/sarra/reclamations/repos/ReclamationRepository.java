@@ -13,13 +13,15 @@ import com.sarra.reclamations.entities.Reclamation;
 @RepositoryRestResource(path = "rest")
 public interface ReclamationRepository extends JpaRepository <Reclamation , Long>{
 
-	List<Reclamation> findByAnnee(String annee);
+	//List<Reclamation> findByAnnee(String annee);
 	List<Reclamation> findByobjetRecalamation(String objetRecalamation);
+	
+	List<Reclamation> findByArchivedTrue();
 	
 	@Query("select r from Reclamation r where r.agent = ?1") 
 	List<Reclamation> findByAgent (Agent agent);
 	List<Reclamation> findByAgentMatriculeAgent(String matriculeAgent);
-	List<Reclamation> findByOrderByAnneeAsc();
+	//List<Reclamation> findByOrderByAnneeAsc();
 
 	
 

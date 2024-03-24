@@ -21,10 +21,12 @@ public class Agent {
 	private String matriculeAgent ; 
 	private Integer numTel;
 	private String nomAgent;
+	private String cin;
 	private String prenomAgent;
 	private String adresseAgent;
 	private String emailAgent;
 	private Date dateNaissance;
+	private String password;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "agent")

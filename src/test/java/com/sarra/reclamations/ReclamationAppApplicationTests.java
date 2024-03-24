@@ -21,7 +21,7 @@ class ReclamationAppApplicationTests {
 	
 	@Test
 	public void testCreateReclamation() {
-		Reclamation reclam = new Reclamation(123L,"tunisietelecom",new Date(), "2016", 3L, "maladie" );
+		Reclamation reclam = new Reclamation(123L,"tunisietelecom",new Date(), "descreclam", "maladie" );
 		reclamationRepository.save(reclam);
 	}
 	
@@ -32,13 +32,13 @@ class ReclamationAppApplicationTests {
 		System.out.println(r);
 	}
 	
-	@Test
-	public void testUpdateReclamation()
-	{
-		Reclamation r = reclamationRepository.findById(123L).get();
-		r.setNbSemaine(4L);
-		reclamationRepository.save(r);
-	}
+	//@Test
+	//public void testUpdateReclamation()
+	//{
+		//Reclamation r = reclamationRepository.findById(123L).get();
+		//r.setNbSemaine(4L);
+		//reclamationRepository.save(r);
+	//}
 	
 	@Test
 	public void testDeleteReclamation() {
@@ -55,15 +55,15 @@ class ReclamationAppApplicationTests {
 		}
 	}
 	
-	@Test
-	public void testFindByAnnee()
-	{
-	List<Reclamation> reclams = reclamationRepository.findByAnnee("2016");
-	for (Reclamation r : reclams)
-		{
-	System.out.println(r);
-		}
-	}
+	//@Test
+	//public void testFindByAnnee()
+	//{
+	//List<Reclamation> reclams = reclamationRepository.findByAnnee("2016");
+	//for (Reclamation r : reclams)
+		//{
+	//System.out.println(r);
+		//}
+	//}
 	
 	@Test
 	public void testfindByAgent()
@@ -87,15 +87,15 @@ class ReclamationAppApplicationTests {
 	}
 	}
 	
-	@Test
-	public void testfindByOrderByAnneeAsc()
-	{
-	List<Reclamation> reclams = reclamationRepository.findByOrderByAnneeAsc();
-	for (Reclamation r : reclams)
-	{
-	System.out.println(r);
-	}
-	}
+	//@Test
+	//public void testfindByOrderByAnneeAsc()
+	//{
+	//List<Reclamation> reclams = reclamationRepository.findByOrderByAnneeAsc();
+	//for (Reclamation r : reclams)
+	//{
+	//System.out.println(r);
+	//}
+	//}
 	
 	
 	
